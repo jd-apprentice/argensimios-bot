@@ -18,7 +18,7 @@ export class Notice {
     await interaction.reply(json.link);
   }
 
-  @SimpleCommand("infobae")
+  @SimpleCommand("economia")
   simpleNotice(command: SimpleCommandMessage): void {
     this.notices(command.message);
   }
