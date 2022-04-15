@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "outDir": "build",
-    "rootDir": "src",
+     "baseUrl": "./",
+    "outDir": "./dist",
     "strict": true,
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
