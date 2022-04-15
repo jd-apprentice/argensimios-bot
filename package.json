@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
-  "main": "build/main.js",
+  "main": "dist/main.js",
+  "author": "jd-apprentice <emeraldusk@gmail.com>",
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/main.ts",
