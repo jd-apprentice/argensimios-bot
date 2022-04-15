@@ -1,1 +1,1 @@
-Worker: node .build/main.js
+Worker: node .src/main.ts
