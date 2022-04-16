@@ -1,6 +1,5 @@
 import type { CommandInteraction } from "discord.js";
-import type { SimpleCommandMessage } from "discordx";
-import { Discord, SimpleCommand, Slash } from "discordx";
+import { Discord, SimpleCommand, SimpleCommandMessage, Slash } from "discordx";
 import fetch from "node-fetch";
 
 @Discord()
@@ -13,7 +12,6 @@ export class Notice {
     const response = await fetch(
       `https://infobae-api.herokuapp.com/api/infobae?topic=${topic}`
     );
-    console.log(response);
     type Response = {
       lastmod: string;
       link: string;
