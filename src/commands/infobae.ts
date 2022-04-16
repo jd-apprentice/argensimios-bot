@@ -6,10 +6,14 @@ import fetch from "node-fetch";
 @Discord()
 export class Notice {
   @Slash("infobae")
-  private async notices(interaction: CommandInteraction): Promise<void> {
+  private async notices(
+    interaction: CommandInteraction,
+    topic: string
+  ): Promise<void> {
     const response = await fetch(
-      "https://infobae-api.herokuapp.com/api/infobae/economia"
+      `https://infobae-api.herokuapp.com/api/infobae?topic=${topic}`
     );
+    console.log(response);
     type Response = {
       lastmod: string;
       link: string;
@@ -19,7 +23,27 @@ export class Notice {
   }
 
   @SimpleCommand("economia")
-  simpleNotice(command: SimpleCommandMessage): void {
-    this.notices(command.message);
+  simpleEconomia(command: SimpleCommandMessage): void {
+    this.notices(command.message, "economia");
+  }
+
+  @SimpleCommand("ciencia")
+  simpleCiencia(command: SimpleCommandMessage): void {
+    this.notices(command.message, "ciencia");
+  }
+
+  @SimpleCommand("fotos")
+  simpleFotos(command: SimpleCommandMessage): void {
+    this.notices(command.message, "fotos");
+  }
+
+  @SimpleCommand("mundo")
+  simpleMundo(command: SimpleCommandMessage): void {
+    this.notices(command.message, "mundo");
+  }
+
+  @SimpleCommand("politica")
+  simplePolitica(command: SimpleCommandMessage): void {
+    this.notices(command.message, "politica");
   }
 }
